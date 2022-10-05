@@ -47,17 +47,16 @@ const ContactMe = ({ pageInfo }: Props) => {
                         <p>{pageInfo.email}</p>
                     </div>
                 </div>
-
                 <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2 w-fit mx-auto'>
                     <div className='flex space-x-2'>
                         <input
                             {...register('name')}
-                            className='contactInput'
+                            className='contactInput w-3/4'
                             type="text"
                             placeholder='Name' />
                         <input
                             {...register('email')}
-                            className='contactInput'
+                            className='contactInput w-3/4'
                             type="email"
                             placeholder='Email' />
                     </div>
@@ -72,7 +71,7 @@ const ContactMe = ({ pageInfo }: Props) => {
                         placeholder='Message' />
                     <button
                         type='submit'
-                        className='bg-[#F7AB0A] py-3 px-6 rounded-md text-black font-bold text-lg'>
+                        className='bg-[#F7AB0A] py-2 px-4 rounded-md text-black font-bold text-lg'>
                         Submit
                     </button>
                 </form>
