@@ -1,4 +1,4 @@
-import type { GetStaticProps } from 'next'
+import type { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -80,7 +80,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 export default Home
 
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
+export const getServerSideProps: GetServerSideProps<Props> = async (context) => {
   const pageInfo: PageInfo = await fetchPageInfo();
   const projects: Project[] = await fetchProjects();
   const experiences: Experience[] = await fetchExperience();
@@ -95,9 +95,5 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       projects,
       socials
     },
-    // Next.js will attempt to re-generate the page:
-    // - when a request come in
-    // = at most once every 10 secondes
-    revalidate: 10
   }
 }
