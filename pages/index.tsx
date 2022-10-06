@@ -61,7 +61,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
       </section>
 
       <Link href='#hero'>
-        <footer className='sticky bottom-5 w-full cursor-pointer'>
+        <footer className='absolute bottom-5 left-0 right-0 mx-auto w-10'>
           <div className='flex items-center justify-center'>
             <Image
               className='rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
@@ -73,6 +73,7 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
           </div>
         </footer>
       </Link>
+
     </div>
   )
 }
