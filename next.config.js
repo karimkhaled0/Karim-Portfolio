@@ -4,8 +4,8 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    domains: ['cdn.sanity.io'],
+    domains: ["cdn.sanity.io", "fiverr-res.cloudinary.com"],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

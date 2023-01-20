@@ -7,6 +7,7 @@ import ContactMe from '../components/ContactMe'
 import ExperienceWork from '../components/ExperienceWork'
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import OrderGig from '../components/OrderGig'
 import Projects from '../components/Projects'
 import Skills from '../components/Skills'
 import { urlFor } from '../sanity'
@@ -54,6 +55,10 @@ const Home = ({ pageInfo, experiences, skills, projects, socials }: Props) => {
 
       <section id='projects' className='snap-center'>
         <Projects projects={projects} />
+      </section>
+
+      <section id='order' className='snap-center'>
+        <OrderGig />
       </section>
 
       <section id='contact' className='snap-end'>
