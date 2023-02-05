@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/jsx-key */
 import Image from 'next/image'
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { Project } from '../typings'
 import { urlFor } from '../sanity'
@@ -11,18 +11,17 @@ type Props = {
 }
 
 const Projects = ({ projects }: Props) => {
-    const [inDemo, setInDemo] = useState('')
     return (
         <div className='h-screen pb-20 md:pb-0 relative flex overflow-hidden flex-col text-left md:flex-row max-w-full justify-evenly mx-auto items-center z-0'>
             <h3 className='absolute top-24 uppercase tracking-[20px] text-gray-500 text-2xl'>Projects</h3>
-            <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
+            <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-proximity snap-x z-20 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
                 {projects?.map((project, i) => (
                     <motion.div
                         key={project._id}
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1.5 }}
-                        className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
+                        className='w-screen snap-center flex-shrink-0 flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen'>
                         <motion.div
                             initial={{ y: -200, opacity: 0 }}
                             whileInView={{ y: 0, opacity: 1 }}
@@ -78,7 +77,6 @@ const Projects = ({ projects }: Props) => {
                 ))}
             </div>
             <div className='w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[400px] -skew-y-12' />
-
         </div >
     )
 }
